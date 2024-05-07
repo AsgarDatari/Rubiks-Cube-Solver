@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="3d_frame.css">
+    <!-- link to rubik's cube model -->
+		<link rel="stylesheet" type="text/css" href="/src/model/styles/cube.css">
+
+    <title>3D Frame</title>
+</head>
+<body>
+      <img src="/images/back_pattern.jpg" alt="pattern" class="img_pattern">
+      <div class="scene">
+        <div class="cube_frame">
+          <!-- HomePage -->
+          <div class="cube__face cube__face--front">
+            <img src="/images/home_background.png" alt="background">
+            <div>
+              <h1 class="centered">WELCOME</h1>
+              <h1 class="centered1">Get ready to solve your puzzle</h1>
+            </div>
+            <div id='container'></div>     
+          </div>
+
+          <div class="cube__face cube__face--back">back</div>
+          <!-- 3X3 Solver Page -->
+          <div class="cube__face cube__face--right">
+            <img src="/images/3x3_back_img.png" alt="background">
+            <h1 class="centered-r">3x3 Solver</h1>
+            
+          </div>
+
+          <div class="cube__face cube__face--left">left</div>
+          <div class="cube__face cube__face--top">top</div>
+          <div class="cube__face cube__face--bottom">bottom</div>
+        </div>
+      </div>
+      <!-- Radio Buttons -->
+      <p class="radio-group">
+        <label>
+          <input type="radio" name="rotate-cube-side" value="front" checked /> front
+        </label>
+        <label>
+          <input type="radio" name="rotate-cube-side" value="right" /> right
+        </label>
+        <label>
+          <input type="radio" name="rotate-cube-side" value="back" /> back
+        </label>
+        <label>
+          <input type="radio" name="rotate-cube-side" value="left" /> left
+        </label>
+        <label>
+          <input type="radio" name="rotate-cube-side" value="top" /> top
+        </label>
+        <label>
+          <input type="radio" name="rotate-cube-side" value="bottom" /> bottom
+        </label>
+      </p>
+
+    <!--solver js-->
+
+    <!--3d model js-->
+    <script src='/src/model/js/cube/cuber.min.js'></script>
+		<script src='/src/model/js/photon.js'></script>
+		<script src='//code.jquery.com/jquery-2.1.1.min.js'></script>
+		
+		<script>
+
+			var container 	= document.querySelector( '#container' ),
+				cube 		= new ERNO.Cube();
+				light 		= new Photon.Light( 10, 0, 100 );
+
+			container.appendChild( cube.domElement );
+		</script>
+
+
+    <!--frame js-->
+      <script>
+        var cube_frame = document.querySelector('.cube_frame');
+        var radioGroup = document.querySelector('.radio-group');
+        var currentClass = '';
+
+        function changeSide() {
+        var checkedRadio = radioGroup.querySelector(':checked');
+        var showClass = 'show-' + checkedRadio.value;
+        if ( currentClass ) {
+            cube_frame.classList.remove( currentClass );
+        }
+        cube_frame.classList.add( showClass );
+        currentClass = showClass;
+        }
+        // set initial side
+        changeSide();
+        radioGroup.addEventListener( 'change', changeSide );
+      </script>
+      <!-- <script>
+        var cube = document.querySelector('.cube');
+        var buttons = document.querySelectorAll('.button');
+    
+        function changeSide(side) {
+            var showClass = 'show-' + side;
+            cube.className = 'cube ' + showClass;
+        }
+    
+        // Add event listeners to each button
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Extract the side value from the button's data-side attribute
+                var side = this.getAttribute('data-side');
+                changeSide(side);
+            });
+        });
+    </script> -->
+    
+</body>
+</html>

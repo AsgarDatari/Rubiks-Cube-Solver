@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Div</title>
+    <style>
+        .container {
+            width: 100%; /* Adjust as needed */
+            height: 100vh; /* Adjust as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-div {
+            width: 200px; /* Set width of the centered div */
+            height: 200px; /* Set height of the centered div */
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body> -->
+    <!-- <div class="container">
+        <div class="centered-div">
+             Content goes here
+            This is a centered div.
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Solver</title>
+    <style>
+        /* CSS styles for the cube */
+        .cube {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border: 2px solid #333;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .cube div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            font-weight: bold;
+            transform-style: preserve-3d;
+        }
+
+        .show-front { transform: rotateY(0deg) translateZ(100px); }
+        .show-back { transform: rotateY(180deg) translateZ(100px); }
+        .show-top { transform: rotateX(90deg) translateZ(100px); }
+        .show-bottom { transform: rotateX(-90deg) translateZ(100px); }
+        .show-left { transform: rotateY(-90deg) translateZ(100px); }
+        .show-right { transform: rotateY(90deg) translateZ(100px); }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="show-front">Front</div>
+        <div class="show-back">Back</div>
+        <div class="show-top">Top</div>
+        <div class="show-bottom">Bottom</div>
+        <div class="show-left">Left</div>
+        <div class="show-right">Right</div>
+    </div>
+
+    <!-- Buttons to change cube sides -->
+    <button class="button" onclick="changeSide('front')">Front</button>
+    <button class="button" onclick="changeSide('back')">Back</button>
+    <button class="button" onclick="changeSide('top')">Top</button>
+    <button class="button" onclick="changeSide('bottom')">Bottom</button>
+    <button class="button" onclick="changeSide('left')">Left</button>
+    <button class="button" onclick="changeSide('right')">Right</button>
+
+    <script>
+        function changeSide(side) {
+            var cube = document.querySelector('.cube');
+            var showClass = 'show-' + side;
+            cube.className = 'cube ' + showClass;
+        }
+    </script>
+</body>
+</html>
+

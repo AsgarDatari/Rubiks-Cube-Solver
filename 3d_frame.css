@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+/* general css */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: sans-serif; 
+}
+
+/* background image */
+.img_pattern {
+    width: 1519px;
+    height: 745px;
+}
+
+/* 3d cube frame */
+.scene {
+  width: 500px;
+  height: 500px;
+  perspective: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube_frame {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube_frame.show-front  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube_frame.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube_frame.show-back   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube_frame.show-left   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube_frame.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube_frame.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.cube__face {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  line-height: 500px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front  { background: hsla(  0, 100%, 0%, 0.7); }
+.cube__face--right  { background: #1E1E1E }
+.cube__face--back   { background: hsla(120, 100%, 0%, 0.7); }
+.cube__face--left   { background: hsla(180, 100%, 0%, 0.7); }
+.cube__face--top    { background: hsla(240, 100%, 0%, 0.7); }
+.cube__face--bottom { background: hsla(300, 100%, 0%, 0.7); } 
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(250px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(250px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(250px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(250px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(250px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(250px); }
+
+/* radio button */
+label { 
+    margin-right: 10px; 
+}
+
+.radio-group {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+/* HomePage */
+.square {
+    width:500px;
+    height: 500px;
+    border:1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.centered {
+    color: #ffffff;
+    position: absolute;
+    top: -30%;
+    left: 8%;
+    font-family: 'Oxanium',sans-serif;
+    font-size: 3.5vw;
+    font-weight: bolder;
+}
+.centered1 {
+    color: #ffffff;
+    position: absolute;
+    top: -22%;
+    left: 9%;
+    font-family: 'Oxanium',sans-serif;
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+/* HomePage 3D cube model */
+#container{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 70%;
+}
+
+/* 3x3 Solver Page */
+.cube__face--right img {
+    margin-top: 10px;
+}
+.centered-r {
+    position: absolute;
+    top: -214px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    text-align: start;
+    color: #ffffff;
+    font-family: 'Oxanium',sans-serif;
+    font-size: 40px;
+}
+
