@@ -8,6 +8,7 @@
 
 body { 
     font-family: sans-serif; 
+    background-color: rgb(205, 224, 240);
 }
 
 /* background image */
@@ -69,7 +70,8 @@ body {
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(250px); }
 
 /* radio button */
-label { 
+
+/* label { 
     margin-right: 10px; 
 }
 
@@ -82,17 +84,43 @@ label {
     background-color: black;
     border-radius: 10px;
     color: #ffffff;
+} */
+
+.radio-group {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: fit-content;
+    border: 2px solid #202020;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+}
+.radio-group input{ display: none; }
+.radio-group label{
+    font-family: sans-serif;
+    padding: 10px 16px;
+    border-right: 1px solid #202020;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.radio-group label:last-of-type{ border-right: 0; }
+.radio-group label:hover{
+    background: hsla(0, 0%, 0%, 0.8);
+    color: #fff;
+}
+.radio-group input:checked + label{
+    background: #becbff;
 }
 
+
 /* HomePage */
-.square {
-    width:500px;
-    height: 500px;
-    border:1px solid black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.cube__face--front {
+    margin: 0px;
+    padding: 0px;
 }
 .centered {
     color: #ffffff;
@@ -124,9 +152,6 @@ label {
 }
 
 /* 3x3 Solver Page */
-.cube__face--right img {
-    margin-top: 10px;
-}
 .centered-r {
     position: absolute;
     top: -214px;
@@ -137,4 +162,7 @@ label {
     font-family: 'Oxanium',sans-serif;
     font-size: 40px;
 }
+
+/* 2x2 Solver Page */
+
 

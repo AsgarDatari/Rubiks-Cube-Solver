@@ -11,28 +11,36 @@
     <title>3D Frame</title>
 </head>
 <body>
-      <img src="/images/back_pattern.jpg" alt="pattern" class="img_pattern">
+      <!-- <img src="/images/back_pattern.jpg" alt="pattern" class="img_pattern"> -->
       <div class="scene">
         <div class="cube_frame">
           <!-- HomePage -->
           <div class="cube__face cube__face--front">
-            <img src="/images/home_background.png" alt="background">
+            <img src="/images/home_back_img.png" alt="background">
             <div>
               <h1 class="centered">WELCOME</h1>
               <h1 class="centered1">Get ready to solve your puzzle</h1>
             </div>
-            <div id='container'></div>     
+            <div id='container'></div>
           </div>
 
-          <div class="cube__face cube__face--back">back</div>
+          <!-- BcakPage -->
+          <div class="cube__face cube__face--back">
+            <img src="/images/back_back_img (1).png" alt="background">
+          </div>
+          
           <!-- 3X3 Solver Page -->
           <div class="cube__face cube__face--right">
-            <img src="/images/3x3_back_img.png" alt="background">
+            <img src="/images/3x3_back_img (1).png" alt="background">
             <h1 class="centered-r">3x3 Solver</h1>
-            
           </div>
 
-          <div class="cube__face cube__face--left">left</div>
+           <!-- 3X3 Solver Page -->
+          <div class="cube__face cube__face--left">
+            <img src="/images/2x2_back_img (1).png" alt="background">
+            <h1 class="centered-r">2x2 Solver</h1>
+          </div>
+          
           <div class="cube__face cube__face--top">top</div>
           <div class="cube__face cube__face--bottom">bottom</div>
         </div>
@@ -40,23 +48,23 @@
       <!-- Radio Buttons -->
       <p class="radio-group">
         <label>
-          <input type="radio" name="rotate-cube-side" value="front" checked /> front
+          <input type="radio" name="rotate-cube-side" value="left" /> 2x2 Solver
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="right" /> right
+          <input type="radio" name="rotate-cube-side" value="front" checked /> Home
         </label>
         <label>
+          <input type="radio" name="rotate-cube-side" value="right" /> 3x3 Solver
+        </label>
+        <!-- <label>
           <input type="radio" name="rotate-cube-side" value="back" /> back
-        </label>
-        <label>
-          <input type="radio" name="rotate-cube-side" value="left" /> left
         </label>
         <label>
           <input type="radio" name="rotate-cube-side" value="top" /> top
         </label>
         <label>
           <input type="radio" name="rotate-cube-side" value="bottom" /> bottom
-        </label>
+        </label> -->
       </p>
 
     <!--solver js-->
